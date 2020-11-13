@@ -4,7 +4,12 @@
     background-image: url("/Assets/images/bg.jpg");;
 }
 
-#bottomNav
-    {
+#bottomNav{
         color: white;
-    }
+}
+
+#matchTable
+{
+    margin-left: auto;
+    margin-right: auto;
+}

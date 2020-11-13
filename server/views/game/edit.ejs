@@ -2,7 +2,7 @@
 
 <%- include ../partials/main_nav.ejs %>
 
-<!-- Content for the Add page -->
+<!-- Content for the Edit page -->
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
@@ -45,7 +45,7 @@
                     <input type="text" class="form-control"
                     id="activeTextField"
                     placeholder="Y/N"
-                    name="active"  
+                    name="Active"  
                     value="<%= game.Active %>"
                     required>
                 </div>
@@ -55,7 +55,7 @@
                     <input type="text" class="form-control"
                     id="dateTextField"
                     placeholder="DD/MM/YYYY"
-                    name="date" 
+                    name="Date" 
                     value="<%= game.Date %>"
                     required>
                 </div>
