@@ -14,19 +14,19 @@ module.exports.displayMatchList = (req, res, next) => {
         else
         {
 
-            res.render('index', {title: 'Games', MatchList: matchList});      
+            res.render('game/match', {title: 'Winning Thrill', MatchList: matchList});      
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('game-match/add', {title: 'Create Tournament'})          
+    res.render('game/add', {title: 'Create Tournament'})          
 }
 
 module.exports.processAddPage = (req, res, next) => {
     let newMatch = Game({
         "name": req.body.name,
-        "description": req.body.author,
+        "description": req.body.description,
         "owner": req.body.owner,
         "active": req.body.active,
         "date": req.body.date
@@ -70,7 +70,7 @@ module.exports.processEditPage = (req, res, next) => {
     let updatedMatch = Game({
         "_id": id,
         "name": req.body.name,
-        "description": req.body.author,
+        "description": req.body.description,
         "owner": req.body.owner,
         "active": req.body.active,
         "date": req.body.date
@@ -84,7 +84,7 @@ module.exports.processEditPage = (req, res, next) => {
         }
         else
         {
-            // refresh the book list
+            // refresh the match list
             res.redirect('/game-match');
         }
     });
@@ -93,7 +93,7 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
-    Match.remove({_id: id}, (err) => {
+    Game.remove({_id: id}, (err) => {
         if(err)
         {
             console.log(err);
@@ -101,7 +101,7 @@ module.exports.performDelete = (req, res, next) => {
         }
         else
         {
-             // refresh the book list
+             // refresh the match list
              res.redirect('/game-match');
         }
     });
