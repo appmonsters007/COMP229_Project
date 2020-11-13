@@ -7,8 +7,9 @@
   <main class="container">
     <div class="row">
         <div class="offset-md-1 col-md-11">
-            <h1><%= title %></h1>
-            <a href="/add" class="btn btn-primary" role="button">
+            <h1 class="text-center">Tournament List</h1>
+            <br>
+            <a href="game-match/add" class="btn btn-primary" role="button">
             <i class="fas fa-plus-circle"></i> Create Tournaments</a>
             <br>
             <table class="table table-bordered table-striped table-hover">
@@ -17,10 +18,10 @@
                     <th class="text-center col-2">Team Name</th>
                      <th class="col-4">Description</th>
                     <th class="text-center col-2">Owner</th>
-                    <th class="text-center col-1">Active Tournament</th>
-                    <th class="text-center col-1">Date completed (If no)</th>
-                    <th class="text-center col-1"></th>
-                    <th class="text-center col-1"></th>
+                    <th class="text-center col-1">Active</th>
+                    <th class="text-center col-2">Date (If No)</th>
+                    <th class="text-center col-1">Edit Buttons</th>
+                    <th class="text-center col-1">Delete Buttons</th>
                 </tr>
 
                 <!-- Repeatable Template Row -->
@@ -30,14 +31,14 @@
                         <td class="text-center col-2"><%= MatchList[count].name %></td>
                         <td class="col-4"><%= MatchList[count].description %></td>
                         <td class="text-center col-2"><%= MatchList[count].owner %></td>
-                        <td class="text-center col-1"><%= MatchList[count].active %></td>
-                        <td class="text-center col-1"><%= MatchList[count].date %></td>
+                        <td class="text-center col-1"><%= MatchList[count].Active %></td>
+                        <td class="text-center col-2"><%= MatchList[count].Date %></td>
                         <td class="text-center col-1">
-                            <a href="/edit<%= MatchList[count]._id %>" class="btn btn-primary btn-sm">
+                            <a href="/game-match/edit<%= MatchList[count]._id %>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i> Edit</a>
                         </td>
                         <td class="text-center col-1">
-                            <a href="/delete<%= MatchList[count]._id %>" class="btn btn-danger btn-sm">
+                            <a href="/game-match/delete<%= MatchList[count]._id %>" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i> Delete</a>
                         </td>
                     </tr>

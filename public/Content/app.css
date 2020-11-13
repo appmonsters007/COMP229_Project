@@ -3,3 +3,8 @@
 #indexBody{
     background-image: url("/Assets/images/bg.jpg");;
 }
+
+#bottomNav
+    {
+        color: white;
+    }
