@@ -1,9 +1,8 @@
-
 <%- include ../partials/header.ejs %>
 
 <%- include ../partials/main_nav.ejs %>
 
-       <!-- Main Content -->
+    <!-- Main Content -->
   <main class="container">
     <div class="row">
         <div class="offset-md-1 col-md-11">
@@ -20,12 +19,14 @@
                     <th class="text-center col-2">Owner</th>
                     <th class="text-center col-1">Active</th>
                     <th class="text-center col-2">Date (If No)</th>
-                    <th class="text-center col-1">Edit Buttons</th>
-                    <th class="text-center col-1">Delete Buttons</th>
+                    <!-- hide the two buttons if not login -->
+                    <% if(typeof displayname=='string' && displayname) {%>
+                        <th class="text-center col-1">Edit Buttons</th>
+                        <th class="text-center col-1">Delete Buttons</th>
+                    <% } %>
                 </tr>
 
                 <!-- Repeatable Template Row -->
-
                 <% for(let count = 0; count < MatchList.length; count++) { %>
                     <tr class="d-flex">
                         <td class="text-center col-2"><%= MatchList[count].name %></td>
@@ -33,14 +34,17 @@
                         <td class="text-center col-2"><%= MatchList[count].owner %></td>
                         <td class="text-center col-1"><%= MatchList[count].Active %></td>
                         <td class="text-center col-2"><%= MatchList[count].Date %></td>
-                        <td class="text-center col-1">
-                            <a href="/game-match/edit<%= MatchList[count]._id %>" class="btn btn-primary btn-sm">
-                            <i class="fas fa-pencil-alt"></i> Edit</a>
-                        </td>
-                        <td class="text-center col-1">
-                            <a href="/game-match/delete<%= MatchList[count]._id %>" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash-alt"></i> Delete</a>
-                        </td>
+                        <!-- hide the two buttons if not login -->
+                        <% if(typeof displayname=='string' && displayname) {%>
+                            <td class="text-center col-1">
+                                <a href="/game-match/edit<%= MatchList[count]._id %>" class="btn btn-primary btn-sm">
+                                <i class="fas fa-pencil-alt"></i> Edit</a>
+                            </td>
+                            <td class="text-center col-1">
+                                <a href="/game-match/delete<%= MatchList[count]._id %>" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i> Delete</a>
+                            </td>
+                        <% } %>
                     </tr>
                 <% } %>
             </table>
@@ -48,7 +52,6 @@
     </div>
   </main>
 
-  <%- include ../partials/bottom_nav.ejs %>  
+<%- include ../partials/bottom_nav.ejs %>
 
 <%- include ../partials/footer.ejs %>
-  
