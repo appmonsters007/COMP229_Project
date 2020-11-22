@@ -15,7 +15,7 @@ let mongoose = require('mongoose')
 let db = require('./db')
 
 // point mongoose to the DB URI
-mongoose.connect(db.URI, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(db.URI, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
 
 let mongoDB = mongoose.connection
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'))
@@ -54,6 +54,7 @@ passport.use(new local_strategy(
   function(username, password, done) {
     user.findOne({ username: username }, function (err, user) {
       if (err) { return done(err) }
+      if(!user) {return done(null, false)}
       if (username !== user.username) { return done(null, false) }
       if (password !== user.password) { return done(null, false) }
       return done(null, user)
@@ -70,7 +71,7 @@ app.use('/game-match', gamesRouter)
 
 // catch 404 and forward to error handler
 app.use(function(_, res) {
-  res.render('errors/404',{title:'page not found'})
+  res.render('error',{title:'page not found',message:'404'})
 })
 
 // error handler

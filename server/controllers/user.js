@@ -38,7 +38,12 @@ module.exports.process_login = (req,res,next) => {
       {
         return next(err)
       }
-      return res.redirect('/match')
+      // let payload = {id:user._id,displayname:user.displayname,username:use.username,email:user.email}
+      // let token = jwt.sign(payload,'secret',{expiresIn:604800})// expire in one week
+      /* peek the payload and token
+      res.json({success:true,msg:'successful logined',user:{id:user._id,displayname:user.displayname,username:use.username,email:user.email},token:token})
+      */
+      return res.redirect('/game-match')
     })
   })(req,res,next)
 }
@@ -83,9 +88,12 @@ module.exports.process_register = (req,res) => {
    }
    else
    {
+     /* peek state
+     res.json({success:true,msg:'sucessful registered'})
+     */
      // successful registration
      return passport.authenticate('local')(req,res,() => {
-       res.redirect('/match')
+       res.redirect('/game-match')
      })
    }
   })

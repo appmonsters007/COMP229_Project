@@ -1,5 +1,5 @@
 // create a reference to the model
-let Game = require('../models/game');
+let Game = require('../models/game')
 
 module.exports.displayMatchList = (req, res) => {
     Game.find((err, matchList) => {
@@ -15,7 +15,7 @@ module.exports.displayMatchList = (req, res) => {
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('game/add', {title: 'Create Tournament'})
+    res.render('game/add', {title: 'Create Tournament',displayname:req.user?req.user.displayname:''})
 }
 
 module.exports.processAddPage = (req, res, next) => {
@@ -53,7 +53,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('game/edit', {title: 'Edit Tournament', game: matchEdit})
+            res.render('game/edit', {title: 'Edit Tournament', game: matchEdit,displayname:req.user?req.user.displayname:''})
         }
     });
 }

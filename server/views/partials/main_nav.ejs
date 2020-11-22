@@ -14,15 +14,23 @@
         <% } else  { %>
         <li class="nav-item">
         <% } %>
-          <a class="nav-link" href="/"><i class="fas fa-lg fa-laptop-house"></i> Home </a>
+          <a class="nav-link" href="/"><i class="fas fa-lg fa-laptop-house"></i>Home</a>
+        </li>
 
           <% if (title == "Winning Thrill"){ %>
         <li class="nav-item active">
         <% } else  { %>
         <li class="nav-item">
         <% } %>
-          <a class="nav-link" href="/game-match"><i class="fas fa-lg fa-laptop-house"></i> Tournament List </a>
+          <a class="nav-link" href="/game-match"><i class="fas fa-lg fa-laptop-house"></i>Tournament List</a>
         </li>
-        </li>
+        <% if(typeof displayname == 'string' && displayname) { %>
+          <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayname %></li>
+          <li class="nav-item"><a href="/logout" class="nav-link">
+            <i class="fas fa-lg fa-sign-out-alt"></i>Logout</a></li>
+        <% } else { %>
+          <li class="nav-item"><a href="/login" class="nav-link">
+            <i class="fas fa-lg fa-sign-in-alt"></i>Login</a></li>
+        <% } %>
     </div>
   </nav>

@@ -14,7 +14,6 @@ let user=mongoose.Schema(
     collection:'users'
   }
 )
-
 // configure options
 let options = ({missing_password_error:'wrong/missing password'})
 user.plugin(local_mongoose,options)
