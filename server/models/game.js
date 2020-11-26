@@ -1,4 +1,4 @@
-let mongoose = require('mongoose');
+let mongoose = require('mongoose')
 
 // create a model class
 let gameModel = mongoose.Schema({
@@ -10,6 +10,6 @@ let gameModel = mongoose.Schema({
 },
 {
     collection: "games"
-});
+})
 
-module.exports = mongoose.model('Game', gameModel);
+module.exports = mongoose.model('Game', gameModel)

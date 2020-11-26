@@ -1,26 +1,21 @@
-let express = require('express');
-let router = express.Router();
-let mongoose = require('mongoose');
-
 // create a reference to the model
-let Game = require('../models/game');
+let Game = require('../models/game')
 
-module.exports.displayMatchList = (req, res, next) => {
+module.exports.displayMatchList = (req, res) => {
     Game.find((err, matchList) => {
         if(err)
         {
-            return console.error(err);
+            return console.error(err)
         }
         else
         {
-
-            res.render('game/match', {title: 'Winning Thrill', MatchList: matchList});      
+            res.render('game/match', {title: 'Winning Thrill', MatchList: matchList,displayname:req.user?req.user.displayname:''})
         }
-    });
+    })
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('game/add', {title: 'Create Tournament'})          
+    res.render('game/add', {title: 'Create Tournament',displayname:req.user?req.user.displayname:''})
 }
 
 module.exports.processAddPage = (req, res, next) => {
@@ -32,7 +27,7 @@ module.exports.processAddPage = (req, res, next) => {
         "Date": req.body.Date
     });
 
-    Game.create(newMatch, (err, Game) =>{
+    Game.create(newMatch, (err) =>{
         if(err)
         {
             console.log(err);
@@ -44,7 +39,6 @@ module.exports.processAddPage = (req, res, next) => {
             res.redirect('/game-match');
         }
     });
-
 }
 
 module.exports.displayEditPage = (req, res, next) => {
@@ -59,7 +53,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('game/edit', {title: 'Edit Tournament', game: matchEdit})
+            res.render('game/edit', {title: 'Edit Tournament', game: matchEdit,displayname:req.user?req.user.displayname:''})
         }
     });
 }
