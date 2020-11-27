@@ -23,8 +23,8 @@ module.exports.processAddPage = (req, res, next) => {
         "name": req.body.name,
         "description": req.body.description,
         "owner": req.body.owner,
-        "Active": req.body.Active,
-        "Date": req.body.Date
+        "active": req.body.active,
+        "date": req.body.date
     });
 
     Game.create(newMatch, (err) =>{
@@ -66,8 +66,8 @@ module.exports.processEditPage = (req, res, next) => {
         "name": req.body.name,
         "description": req.body.description,
         "owner": req.body.owner,
-        "Active": req.body.Active,
-        "Date": req.body.Date
+        "active": req.body.active,
+        "date": req.body.date
     });
 
     Game.updateOne({_id: id}, updatedMatch, (err) => {

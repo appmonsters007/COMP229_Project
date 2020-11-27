@@ -5,8 +5,8 @@ let gameModel = mongoose.Schema({
     name: String,
     description: String,
     owner: String,
-    Active: String,
-    Date: String
+    active: String,
+    date: String
 },
 {
     collection: "games"
