@@ -25,7 +25,8 @@
           <a class="nav-link" href="/game-match"><i class="fas fa-lg fa-laptop-house"></i>Tournament List</a>
         </li>
         <% if(typeof displayname == 'string' && displayname) { %>
-          <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayname %></li>
+          <li class="nav-item"><a href='/update' class='nav-link'>
+            <i class="fas fa-lg fa-user"></i>Welcome, <%= displayname %></a></li>
           <li class="nav-item"><a href="/logout" class="nav-link">
             <i class="fas fa-lg fa-sign-out-alt"></i>Logout</a></li>
         <% } else { %>

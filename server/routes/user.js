@@ -9,6 +9,10 @@ router.post('/login', user_controller.process_login)
 router.get('/register', user_controller.display_register)
 /* POST register page */
 router.post('/register', user_controller.process_register)
+/* GET update page */
+router.get('/update', user_controller.display_update)
+/* POST update page */
+router.post('/update', user_controller.process_update)
 /* GET logout page */
 router.get('/logout', user_controller.logout)
 module.exports = router
