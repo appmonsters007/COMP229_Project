@@ -1,7 +1,8 @@
 /* custom css goes here */
 
 #indexBody{
-    background-image: url("/Assets/images/bg.jpg");;
+    background-image: url("/Assets/images/bb1.jpg");
+    color: white;
 }
 
 #bottomNav{
@@ -12,4 +13,48 @@
 {
     margin-left: auto;
     margin-right: auto;
+    background-color: white;
+    color: black;
+    
+}
+
+#activeTable
+{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    color: white;
+    width: 50%;       
+    height: 70px;
+}
+
+#activeHeading
+{
+    color: white;
+    text-align: center;
+}
+#heading
+{
+    color: white;
+    text-align: center;
+}
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+  }
+  .blinking{
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color:yellow;    }
+    49%{    color: greenyellow; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: white;    }
+
 }

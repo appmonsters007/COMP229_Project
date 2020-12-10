@@ -1,5 +1,5 @@
-let router = require('express').Router()
-let matchController = require('../controllers/game')
+let router = require('express').Router();
+let matchController = require('../controllers/game');
 
 // guard handler
 function require_verify(req,res,next)

@@ -1,7 +1,10 @@
+let express = require('express');
+let router = express.Router();
+let mongoose = require('mongoose');
 // create a reference to the model
 let Game = require('../models/game')
 
-module.exports.displayMatchList = (req, res) => {
+module.exports.displayMatchList = (req, res, next) => {
     Game.find((err, matchList) => {
         if(err)
         {
@@ -87,7 +90,7 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
-    Game.deleteOne({_id: id}, (err) => {
+    Game.remove({_id: id}, (err) => {
         if(err)
         {
             console.log(err);

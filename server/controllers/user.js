@@ -15,7 +15,7 @@ module.exports.display_login = (req,res) => {
   }
   else
   {
-    return res.redirect('/game-match')
+    return res.redirect('/')
   }
 }
 module.exports.process_login = (req,res,next) => {
@@ -97,57 +97,6 @@ module.exports.process_register = (req,res) => {
      })
    }
   })
-}
-module.exports.display_update = (req,res) => {
-  // check login
-  if(req.user)
-  {
-    let id = req.user._id;
-
-    user.findById(id, (err, edit_content) => {
-        if(err)
-        {
-            console.log(err)
-            res.render('error',{title:'fail to find the user',message:'404'})
-        }
-        else
-        {
-          //show the update view
-          res.render('authentication/update',
-          {
-            title: 'update',
-            messages:req.flash('update messages'),
-            edit: edit_content,
-            displayname:req.user?req.user.displayname:''
-          })
-        }
-    })
-  }
-  else
-  {
-    return res.redirect('/login')
-  }
-}
-module.exports.process_update = (req,res) => {
-  let id = req.body.id;
-
-  let profile = {
-    username:req.body.username,
-    password:req.body.password,
-    email:req.body.email,
-    displayname:req.body.displayname
-  }
-  user.findOneAndUpdate(id, {$set:profile}, (err) => {
-    if(err)
-    {
-        console.log(err)
-        res.render('error',{title:'fail to update the user',message:'404'})
-    }
-    else
-    {
-        res.redirect('/login')
-    }
-})
 }
 module.exports.logout = (req,res) => {
   req.logout()

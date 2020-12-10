@@ -5,13 +5,53 @@
 <body id="indexBody">
   <!-- Main Content -->
   <main class="container">
-    <div class="jumbotron">
-      <h1 class="display-4" style="text-align:center">Winning Thrill</h1>
+      <h1 class="display-4" id="heading">Winning Thrill</h1>
+      <span class="blinking">Click Here!</span>
+      <br>
+      <a href="/game-match" class="btn btn-dark btn-lg">Create Tournament</a>
       <br>
       <br>
+    <div class="row">  
     </div>
-  </main>
+
 </body>
+</html>
+  </main>
+
+  <div class="offset-md-1 col-md-11">
+            <h4 class="display-6" style="text-align:center" id="activeHeading">Active Tournaments</h4>
+            <br>
+            <br>
+            <table class="table table-bordered table-striped" id="activeTable">
+                <!-- Header Row-->
+                <tr class="table-condensed">
+                    <th class="text-center col-1">Team Name</th>
+                     <th class="col-2">Description</th>
+                    <th class="text-center col-1">Owner</th>
+                    <th class="text-center col-1">Active</th>
+                </tr>
+                <tr class="table-condensed">
+                <td class="text-center col-1">Raptors</td>
+                <td class="text-center col-2">Team from Canada</td>
+                 <td class="text-center col-1">Mathews</td>
+                  <td class="text-center col-1">Yes</td>
+                </tr>
+                <tr class="table-condensed">
+                <td class="text-center col-1">Phoenix Suns</td>
+                <td class="text-center col-2">Team from Phoenix</td>
+                 <td class="text-center col-1">Benny</td>
+                  <td class="text-center col-1">Yes</td>
+                </tr>
+                 <tr class="table-condensed">
+                <td class="text-center col-1">Silver Stone</td>
+                <td class="text-center col-2">Team of North Carolina</td>
+                 <td class="text-center col-1">Johny Depp</td>
+                  <td class="text-center col-1">Yes</td>
+                </tr>
+            </table>
+        </div>
+</body>
+
 
 <%- include partials/bottom_nav.ejs %>
 
