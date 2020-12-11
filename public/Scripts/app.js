@@ -5,8 +5,10 @@
     {
         console.log("App Started...");
 
+        //to find delete buttons 
         let deleteButtons = document.querySelectorAll('.btn-danger');
         
+        //for loop to confirm deletion
         for(button of deleteButtons)
         {
             button.addEventListener('click', (event)=>{
@@ -19,6 +21,7 @@
         }
     }
 
+    //load page on Start
     window.addEventListener("load", Start);
 
 })();
