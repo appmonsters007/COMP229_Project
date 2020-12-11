@@ -33,6 +33,14 @@
           <a class="nav-link" href="/"><i class="fas fa-lg fa-user-tie"></i>Forum</a>
         </li>
 
+         <% if (title == "Tournament"){ %>
+        <li class="nav-item active">
+        <% } else  { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/brackets"><i class="fas fa-lg fa-basketball-ball"></i>Brackets</a>
+        </li>
+
 
         <% if(typeof displayname == 'string' && displayname) { %>
           <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayname %></li>
