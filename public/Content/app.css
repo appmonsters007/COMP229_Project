@@ -47,6 +47,12 @@
     color: white;
     text-align: center;
 }
+
+#editBtn, #delBtn
+{
+    height:60px;
+    width:60px;
+}
 .btn {
     background-color: #4CAF50;
     color: white;
