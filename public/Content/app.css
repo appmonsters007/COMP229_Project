@@ -5,6 +5,15 @@
     color: white;
 }
 
+#matchBody
+{
+    background-image: url("/Assets/images/bb3.jpg");
+}
+#matchHeading
+{
+    color: white;
+}
+
 #bottomNav{
         color: white;
 }
@@ -57,4 +66,17 @@
     99%{    color:transparent;  }
     100%{   color: white;    }
 
+}
+
+.blinkingMatch{
+    animation:blinkingText 1.2s infinite;
+    font-size: x-large;
+    
+}
+@keyframes blinkingText{
+    0%{     color:red;    }
+    49%{    color: red; }
+    60%{    color: white; }
+    99%{    color:transparent;  }
+    100%{   color: white;    }
 }

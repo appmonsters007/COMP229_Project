@@ -1,13 +1,18 @@
 <%- include ../partials/header.ejs %>
 
 <%- include ../partials/main_nav.ejs %>
-
+<body id= "matchBody">
     <!-- Main Content -->
   <main class="container">
     <div class="row">
         <div class="offset-md-1 col-md-11">
-            <h1 class="text-center">Tournament List</h1>
+            <h1 class="text-center" id="matchHeading">List Of Tournaments</h1>
             <br>
+            <span class="blinkingMatch">Let's Get Started!</span>
+      <br>
+      <a href="/login" class="btn btn-dark btn-lg">Register/Login</a>
+      <br>
+      <br>
             <a href="game-match/add" class="btn btn-primary" role="button">
             <i class="fas fa-plus-circle"></i> Create Tournaments</a>
             <br>
@@ -51,7 +56,7 @@
         </div>
     </div>
   </main>
-
+</body>
 <%- include ../partials/bottom_nav.ejs %>
 
 <%- include ../partials/footer.ejs %>
