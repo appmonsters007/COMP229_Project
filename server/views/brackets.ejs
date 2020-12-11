@@ -7,14 +7,14 @@
 	<head>
   <br>
 		<h1 id="brHead">Generate Your Own Tournament Bracket With Just One Click!</h1>
-		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-		<script src="http://underscorejs.org/underscore-min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script src="https://underscorejs.org/underscore-min.js"></script>
 		<script>
 			$(document).on('ready', function() {
 				
 				let bracketOptions = [2,4,8,16], // brackets with "perfect" proportions (full fields, no byes)
 				
-					listOfTeams  = _.shuffle(["Raptors","Brookleyn Nets","Phoenix Suns","Maimi Heat","Silver Stone","Speedy Spirits","Buffalo Sabres","Montreal Canadiens","Ottawa Senators","Toronto Maple Leafs","Carolina Hurricanes","Florida Panthers","Tampa Bay Lightning","Washington Capitals","Winnipeg Jets","Chicago Blackhawks","Columbus Blue Jackets","Detroit Red Wings","Nashville Predators","St. Louis Blues","Calgary Flames","Colorado Avalanche","Edmonton Oilers","Minnesota Wild","Vancouver Canucks","Anaheim Ducks","Dallas Stars","Los Angeles Kings","Phoenix Coyotes","San Jose Sharks","Montreal Wanderers","Quebec Nordiques","Hartford Whalers"]), // because a bracket needs some teams!
+					listOfTeams  = _.shuffle(["Raptors","Brookleyn Nets","Phoenix Suns","Miami Heat","Silver Stone","Speedy Spirits","Buffalo Sabres","Montreal Canadiens","Ottawa Senators","Toronto Maple Leafs","Carolina Hurricanes","Florida Panthers","Tampa Bay Lightning","Washington Capitals","Winnipeg Jets","Chicago Blackhawks","Columbus Blue Jackets","Detroit Red Wings","Nashville Predators","St. Louis Blues","Calgary Flames","Colorado Avalanche","Edmonton Oilers","Minnesota Wild","Vancouver Canucks","Anaheim Ducks","Dallas Stars","Los Angeles Kings","Phoenix Coyotes","San Jose Sharks","Montreal Wanderers","Quebec Nordiques","Hartford Whalers"]), // because a bracket needs some teams!
 					
 					bracketCount = 0;
 				
