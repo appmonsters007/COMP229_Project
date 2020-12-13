@@ -7,14 +7,14 @@
     <div class="row">
         <div class="offset-md-3 col-md-6">
             <h1><%= title %></h1>
-            
+
             <form class="form" method="POST">
                 <div class="form-group">
                     <label for="nameTextField">Team Name</label>
                     <input type="text" class="form-control"
                     id="nameTextField"
                     placeholder="Enter the Tournament Name"
-                    name="name" 
+                    name="name"
                     value="<%= game.name %>"
                     required>
                 </div>
@@ -24,10 +24,10 @@
                     <textarea type="text" class="form-control"
                     id="descriptionTextArea"
                     placeholder="Enter the a brief description of the book"
-                    name="description" 
+                    name="description"
                     value= "<%= game.description %>"
                     required>
-                    
+
                     </textarea>
                 </div>
 
@@ -36,7 +36,7 @@
                     <input type="text" class="form-control"
                     id="ownerTextField"
                     placeholder="Enter the owner name"
-                    name="owner" 
+                    name="owner"
                     value="<%= game.owner %>"
                     required>
                 </div>
@@ -46,7 +46,7 @@
                     <input type="text" class="form-control"
                     id="activeTextField"
                     placeholder="Y/N"
-                    name="Active"  
+                    name="Active"
                     value="<%= game.active %>"
                     required>
                 </div>
@@ -56,14 +56,14 @@
                     <input type="text" class="form-control"
                     id="dateTextField"
                     placeholder="DD/MM/YYYY"
-                    name="Date" 
+                    name="Date"
                     value="<%= game.date %>"
                     required>
                 </div>
 
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit</button>
-                
+
                     <a href="/game-match" class="btn btn-warning">
                         <i class="fas fa-undo"></i> Cancel</a>
 
@@ -73,7 +73,6 @@
     </div>
 </div>
 
-
-<%- include ../partials/bottom_nav.ejs %>  
+<%- include ../partials/bottom_nav.ejs %>
 
 <%- include ../partials/footer.ejs %>

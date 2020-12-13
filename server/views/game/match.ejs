@@ -8,11 +8,6 @@
         <div class="offset-md-1 col-md-11">
             <h1 class="text-center" id="matchHeading">List Of Tournaments</h1>
             <br>
-            <span class="blinkingMatch">Let's Get Started!</span>
-      <br>
-      <a href="/login" class="btn btn-dark btn-lg">Register/Login</a>
-      <br>
-      <br>
             <a href="game-match/add" class="btn btn-primary" role="button">
             <i class="fas fa-plus-circle"></i> Create Tournaments</a>
             <br>
@@ -42,11 +37,11 @@
                         <!-- hide the two buttons if not login -->
                         <% if(typeof displayname=='string' && displayname) {%>
                             <td class="text-center col-1">
-                                <a href="/game-match/edit<%= MatchList[count]._id %>" class="btn btn-primary btn-sm" id="editBtn">
+                                <a href="/game-match/edit/<%= MatchList[count]._id %>" class="btn btn-primary btn-sm" id="editBtn">
                                 <i class="fas fa-pencil-alt"></i> Edit</a>
                             </td>
                             <td class="text-center col-1">
-                                <a href="/game-match/delete<%= MatchList[count]._id %>" class="btn btn-danger btn-sm" id="delBtn">
+                                <a href="/game-match/delete/<%= MatchList[count]._id %>" class="btn btn-danger btn-sm" id="delBtn">
                                 <i class="fas fa-trash-alt"></i> Del</a>
                             </td>
                         <% } %>
